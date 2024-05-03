@@ -15,6 +15,8 @@ public enum NetworkError: Error {
 
 public class NetworkService {
     
+    public init() {}
+    
     public func fetchData<T: Decodable>(from urlString: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.decodeError))
